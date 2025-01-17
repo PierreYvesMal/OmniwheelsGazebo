@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<robot name="omni_wheel_base">
+
+<material name="base_colour">
+  <color rgba="1 1 1 1"/>
+</material>
+<material name="wheel_colour">
+  <color rgba="0 0 1 1.0"/>
+</material>
+
+  <link name="base_link"> 
+    <visual>
+      <geometry>
+        <cylinder radius="0.116" length="0.02"/>
+      </geometry>
+      <material name="base_colour"/>
+    </visual>
+  </link>
+
+  <!-- Omni-Wheel 1 -->
+  <link name="wheel_1">
+    <visual>
+      <geometry>
+        <!-- Representing the omni-wheel as a cylinder -->
+        <cylinder radius="0.030" length="0.02"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="wheel_colour"/>
+    </visual>
+  </link>
+  <joint name="wheel_1_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_1"/>
+    <origin xyz="0.058 0.100 0" rpy="0 1.5708 1.0472"/>
+  </joint>
+
+  <link name="wheel_2">
+    <visual>
+      <geometry>
+        <cylinder radius="0.030" length="0.02"/>
+      </geometry>
+      <material name="wheel_colour"/>
+    </visual>
+  </link>
+  <joint name="wheel_2_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_2"/>
+    <origin xyz="-0.116 0 0" rpy="0 1.5708 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="wheel_3">
+    <visual>
+      <geometry>
+        <cylinder radius="0.030" length="0.02"/>
+      </geometry>
+      <material name="wheel_colour"/>
+    </visual>
+  </link>
+  <joint name="wheel_3_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_3"/>
+    <origin xyz="0.058 -0.10046 0" rpy="0 1.5708 -1.0472"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+</robot>
