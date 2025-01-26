@@ -16,13 +16,13 @@ def generate_launch_description():
             executable='robot_state_publisher',
             name='robot_state_publisher',
             output='screen',
-            parameters=[{'robot_description': open('/home/py/ros2_ws/src/gazebo_test/urdf/robot.urdf').read()}]
+            parameters=[{'robot_description': open('/home/py/ros2_ws/src/omniwheels_gazebo/urdf/robot.urdf').read()}]
         ),
         # RViz2
         Node(
             package='rviz2',
             executable='rviz2',
-            arguments=['-d', '/home/py/ros2_ws/src/gazebo_test/rviz/urdf.rviz'],
+            arguments=['-d', '/home/py/ros2_ws/src/omniwheels_gazebo/rviz/urdf.rviz'],
             output='screen'
         )
     ])
