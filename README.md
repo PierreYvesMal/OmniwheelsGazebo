@@ -16,6 +16,9 @@ colcon build --packages-select omniwheels_gazebo
 ## Launch
 > **⚠️ Warning**  
 > Run this in an actual terminal, it doesn't work in VSCode integrated terminal.  
-```
-source ~/ros2_ws/install/setup.bash
-ros2 launch omniwheels_gazebo robot_state_publisher_launch.py
+
+`source ~/ros2_ws/install/setup.bash`  
+Start rviz with the robot  
+`ros2 launch omniwheels_gazebo robot_state_publisher_launch.py`  
+Publish the state of the joints to make the wheels move  
+`ros2 run omniwheels_gazebo state_publisher`

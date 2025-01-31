@@ -11,6 +11,17 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
+find_package(rclcpp REQUIRED)
+find_package(sensor_msgs REQUIRED)
+
+add_executable(state_publisher src/state_publisher.cpp)
+ament_target_dependencies(state_publisher rclcpp sensor_msgs)
+
+install(TARGETS
+  state_publisher
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 install(DIRECTORY
   launch
   DESTINATION share/${PROJECT_NAME}/
